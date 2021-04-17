@@ -1,4 +1,4 @@
-package bluetooth
+package bluetooth_device
 
 type BluetoothDevice interface {
 	getRssi() int

@@ -1,27 +1,27 @@
-package bluetooth
+package bluetooth_device
 
-type BluetoothDeviceImpl struct {
+type bluetoothDeviceImpl struct {
 	rssi    int
 	address string
 	name    string
 }
 
 func CreateDevice(rssi int, address, name string) BluetoothDevice {
-	return BluetoothDeviceImpl{
+	return bluetoothDeviceImpl{
 		rssi:    rssi,
 		address: address,
 		name:    name,
 	}
 }
 
-func (bd BluetoothDeviceImpl) getAddress() string {
+func (bd bluetoothDeviceImpl) getAddress() string {
 	return bd.address
 }
 
-func (bd BluetoothDeviceImpl) getName() string {
+func (bd bluetoothDeviceImpl) getName() string {
 	return bd.name
 }
 
-func (bd BluetoothDeviceImpl) getRssi() int {
+func (bd bluetoothDeviceImpl) getRssi() int {
 	return bd.rssi
 }
