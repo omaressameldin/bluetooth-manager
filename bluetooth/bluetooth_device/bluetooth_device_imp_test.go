@@ -17,14 +17,14 @@ func TestCreateDevice(t *testing.T) {
 
 	for _, row := range testTable {
 		device := CreateDevice(row.rssi, row.address, row.name)
-		if row.rssi != device.getRssi() {
-			t.Errorf("Expected %d got %d", row.rssi, device.getRssi())
+		if row.rssi != device.GetRssi() {
+			t.Errorf("Expected %d got %d", row.rssi, device.GetRssi())
 		}
-		if row.address != device.getAddress() {
-			t.Errorf("Expected %s got %s", row.address, device.getAddress())
+		if row.address != device.GetAddress() {
+			t.Errorf("Expected %s got %s", row.address, device.GetAddress())
 		}
-		if row.name != device.getName() {
-			t.Errorf("Expected %s got %s", row.name, device.getName())
+		if row.name != device.GetName() {
+			t.Errorf("Expected %s got %s", row.name, device.GetName())
 		}
 	}
 }

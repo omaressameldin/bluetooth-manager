@@ -14,14 +14,14 @@ func CreateDevice(rssi int, address, name string) BluetoothDevice {
 	}
 }
 
-func (bd bluetoothDeviceImpl) getAddress() string {
+func (bd bluetoothDeviceImpl) GetAddress() string {
 	return bd.address
 }
 
-func (bd bluetoothDeviceImpl) getName() string {
+func (bd bluetoothDeviceImpl) GetName() string {
 	return bd.name
 }
 
-func (bd bluetoothDeviceImpl) getRssi() int {
+func (bd bluetoothDeviceImpl) GetRssi() int {
 	return bd.rssi
 }
