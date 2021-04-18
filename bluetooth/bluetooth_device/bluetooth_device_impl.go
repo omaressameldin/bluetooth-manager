@@ -2,19 +2,24 @@ package bluetooth_device
 
 type bluetoothDeviceImpl struct {
 	rssi    int
-	address string
+	address BluetoothDeviceAddress
 	name    string
 }
 
-func CreateDevice(rssi int, address, name string) BluetoothDevice {
-	return bluetoothDeviceImpl{
-		rssi:    rssi,
-		address: address,
-		name:    name,
+func CreateDevice(rssi int, address, name string) (BluetoothDevice, error) {
+	deviceAddress, err := CreateBluetoothDeviceAddress(address)
+	if err != nil {
+		return nil, err
 	}
+
+	return &bluetoothDeviceImpl{
+		rssi:    rssi,
+		address: deviceAddress,
+		name:    name,
+	}, nil
 }
 
-func (bd bluetoothDeviceImpl) GetAddress() string {
+func (bd bluetoothDeviceImpl) GetAddress() BluetoothDeviceAddress {
 	return bd.address
 }
 
